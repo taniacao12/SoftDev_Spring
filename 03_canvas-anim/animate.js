@@ -35,6 +35,7 @@ var drawDot = function() {
 
     // draw dot
     clear();
+    ctx.fillStyle = "#00FFFF";
     ctx.beginPath();
     ctx.arc( c.width / 2, c.height / 2, radius,  0, 2 * Math.PI);
     ctx.stroke();
