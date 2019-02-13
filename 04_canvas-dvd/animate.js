@@ -15,7 +15,6 @@ var clear = function (e) {
 
 var stopIt = function() {
     window.cancelAnimationFrame(requestID);
-    requestID = 0;
 }
 
 var drawDot = function() {
