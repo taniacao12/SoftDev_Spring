@@ -61,7 +61,6 @@ var dvdLogoSetup = function(){
 	    xVel *= -1;
 	if (rectY <= 0 || rectY >= c.height - rectHeight)
 	    yVel *= -1;
-
 	rectX += xVel;
 	rectY += yVel;
 	
