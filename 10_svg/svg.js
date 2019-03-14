@@ -1,5 +1,4 @@
 var pic = document.getElementById('vimage');
-var move = document.getElementById("move");
 var clear = document.getElementById("but_clear");
 
 var x = -1;
