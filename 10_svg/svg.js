@@ -5,13 +5,12 @@ var clear = document.getElementById("but_clear");
 var x = -1;
 var y = -1;
 
-var color_change = function(e) {
+var color_change = function (e) {
     var current = e.target
     var color = current.getAttribute("fill")
 
     e.stopPropagation();
-
-    if (color == "purple"){
+    if (color == "purple") {
 	current.setAttribute("fill", "green")
 	console.log("color_change");
     }
@@ -22,7 +21,6 @@ var color_change = function(e) {
 
 	var xrand = (Math.random() * 460) + 20
 	var yrand = (Math.random() * 460) + 20
-
 	var c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
 	c.setAttribute("fill", "purple");
 	c.setAttribute('cx', xrand)
@@ -30,16 +28,15 @@ var color_change = function(e) {
 	c.setAttribute("r", 20);
 
 	console.log(xrand, yrand);
-
 	c.addEventListener("click", color_change)
 	pic.appendChild(c)
     }
 }
 
-var dots = function(e){
-    if (x == e.offsetX && y == e.offsetY && x != -1){
-	e.preventDefault()}
-
+var dots = function (e) {
+    if (x == e.offsetX && y == e.offsetY && x != -1)
+	e.preventDefault()
+    
     var c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
     c.setAttribute("fill", "purple");
     c.setAttribute('cx', e.offsetX)
@@ -54,7 +51,7 @@ var dots = function(e){
     pic.appendChild(c)
 }
 
-var clearScreen = function(e){
+var clearScreen = function (e) {
     var current = pic.firstChild
     while (current != null){
 	console.log("clearing")
