@@ -11,7 +11,7 @@
   }
 </style>
 <div id="main">
-  <svg width="1500" height="900"></svg>
+  <svg width="1800" height="900"></svg>
 </div>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
@@ -34,10 +34,10 @@
 
   // set the colors
   var z = d3.scaleOrdinal()
-  .range(["#4c45b2", "#6861b1", "#847cb1", "#a198b1", "#bdb4b0", "#d9cfb0", "#f5ebaf"]);
+  .range(["#5d8aa8", "#efdecd", "#e52b50", "#9966cc", "#a4c639", "#7fffd4", "#e9d66b", "#b2beb5", "#a1caf1", "#98777b"]);
 
   // load the csv and create the chart
-  d3.csv("../static/deaths.csv", function(d, i, columns) {
+  d3.csv("../static/dataset.csv", function(d, i, columns) {
   for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
 			 d.total = t;
 			 return d;
@@ -46,8 +46,7 @@
 
 			 var keys = data.columns.slice(1);
 
-			 data.sort(function(a, b) { return b.total - a.total; });
-			 x.domain(data.map(function(d) { return d.State; }));
+			 x.domain(data.map(function(d) { return d.Year; }));
 			 y.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
 			 z.domain(keys);
 
@@ -59,7 +58,7 @@
 			 .selectAll("rect")
 			 .data(function(d) { return d; })
 			 .enter().append("rect")
-			 .attr("x", function(d) { return x(d.data.State); })
+			 .attr("x", function(d) { return x(d.data.Year); })
 			 .attr("y", function(d) { return y(d[1]); })
 			 .attr("height", function(d) { return y(d[0]) - y(d[1]); })
 			 .attr("width", x.bandwidth())
@@ -70,7 +69,7 @@
 			 var xPosition = d3.mouse(this)[0] - 5;
 			 var yPosition = d3.mouse(this)[1] - 5;
 			 tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
-			 tooltip.select("text").text(d[1]-d[0]);
+			 tooltip.select("text").text(d[1]-d[0]).format("04d");
 			 });
 
 			 g.append("g")
