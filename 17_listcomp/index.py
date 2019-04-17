@@ -94,5 +94,16 @@ print(divisorsB(10))
 # transpose a matrix the loopy way
 def transposeA (matrix):
     sevenA = []
-    for i in range(0,matrix[0].length()):
-        sevenA.append(matrix[0]
+    for i in range(len(matrix[0])):
+        row = []
+        for r in matrix:
+            row.append(r[i])
+        sevenA.append(row)
+    return sevenA
+print(transposeA([[1,2,3],[4,5,6]]))
+
+# transpose a matrix the listcompy way
+def transposeB (matrix):
+    sevenB = [[r[i] for r in matrix] for i in range(len(matrix[0]))]
+    return sevenB
+print(transposeB([[1,2,3],[4,5,6]]))
