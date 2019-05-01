@@ -1,0 +1,15 @@
+def repeat(w):
+    def time(t):
+        return w*t
+    return time
+    
+
+r1 = repeat("hello")
+r2 = repeat("goodbye")
+
+print("\nREPEAT:")
+
+print(r1(2))
+print(r2(2))
+
+print(repeat('cool')(3))
