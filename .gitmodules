@@ -1,0 +1,9 @@
+[submodule "bottishelli"]
+	path = bottishelli
+	url = https://github.com/joyceliaoo/bottishelli
+[submodule "ShrimpCrackers"]
+	path = ShrimpCrackers
+	url = https://github.com/puneetjohal/ShrimpCrackers
+[submodule "data-data"]
+	path = data-data
+	url = https://github.com/AntonDanylenko/data-data
